@@ -1,0 +1,142 @@
+body{
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+/* Topo */
+header{
+    width:100%;
+    height: 80px;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+}
+
+header .info{
+    width: 330px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .info img{
+    width: 75px;
+    height: 53px;
+    object-fit: fill;
+}
+
+header .info ion-icon{
+    font-size: 45px;
+}
+/* Chat */
+main{
+    width: 100%;
+    height: 507px;
+    display: flex;
+    flex-direction: column;
+}
+
+main .comentario{
+    width: 100%;
+    min-height: 40px;
+    font-size: 14px;
+    
+}
+
+.status{
+    background-color: #DCDCDC;
+}
+
+.reservado{
+    background-color: #FFDEDE ;
+}
+
+.usuario{
+    font-size: 700;
+}
+
+/* Inserção de texto */
+
+footer{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer ion-icon{
+    font-size: 26px;
+}
+/* Login */
+.capa{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.capa img{
+    width: 130px;
+    height: 92px;
+    object-fit: fill;
+    margin: 72px auto 94px;
+}
+
+.capa input {
+    width: 260px;
+    height: 54px;
+    text-align: center;
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+    
+}
+
+.capa input ::placeholder{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: #AEAEAE;
+}
+
+.capa button{
+    width: 109px;
+    height: 45px;
+    margin-top: 15px;
+    text-align: center;
+    border: none;
+    border-radius: 9px;
+    background-color: #E7E7E7;
+    font-size: 18px;
+    font-weight: 400;
+    color: #696969;
+}
+.capa button:hover{
+    cursor: pointer;
+    filter: brightness(1.02);
+}
+
+.capa .nome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.capa .loading{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+    font-family: 400;
+}
+
+/* Barra lateral*/
+.sidebar{
+    width: 259px;
+    height: 667px;
+}
+.escondido {
+    display: none;
+}

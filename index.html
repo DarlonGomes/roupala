@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bate-Papo UOL</title>
+    <link href="reset.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="capa" id="inicio">
+        <img src="image/logo 2.png" alt="logo uol" />
+        <div class="nome" id="interface">
+        <input placeholder="Digite seu nome aqui" id="login">
+        <button onclick="login()">Entrar</button>
+        </div>
+        <div class="loading escondido">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#fff;display:block;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                <circle cx="75" cy="50" fill="#bfd1ce" r="5">
+                  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1.3513513513513513s" repeatCount="indefinite" begin="-1.1824324324324325s"></animate>
+                  <animate attributeName="fill" values="#bfd1ce;#bfd1ce;#0e0f0f;#bfd1ce;#bfd1ce" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1.3513513513513513s" begin="-1.1824324324324325s"></animate>
+                </circle><circle cx="67.67766952966369" cy="67.67766952966369" fill="#bfd1ce" r="5">
+                  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1.3513513513513513s" repeatCount="indefinite" begin="-1.0135135135135136s"></animate>
+                  <animate attributeName="fill" values="#bfd1ce;#bfd1ce;#0e0f0f;#bfd1ce;#bfd1ce" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1.3513513513513513s" begin="-1.0135135135135136s"></animate>
+                </circle><circle cx="50" cy="75" fill="#bfd1ce" r="5">
+                  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1.3513513513513513s" repeatCount="indefinite" begin="-0.8445945945945946s"></animate>
+                  <animate attributeName="fill" values="#bfd1ce;#bfd1ce;#0e0f0f;#bfd1ce;#bfd1ce" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1.3513513513513513s" begin="-0.8445945945945946s"></animate>
+                </circle><circle cx="32.32233047033631" cy="67.67766952966369" fill="#bfd1ce" r="5">
+                  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1.3513513513513513s" repeatCount="indefinite" begin="-0.6756756756756757s"></animate>
+                  <animate attributeName="fill" values="#bfd1ce;#bfd1ce;#0e0f0f;#bfd1ce;#bfd1ce" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1.3513513513513513s" begin="-0.6756756756756757s"></animate>
+                </circle><circle cx="25" cy="50" fill="#bfd1ce" r="5">
+                  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1.3513513513513513s" repeatCount="indefinite" begin="-0.5067567567567568s"></animate>
+                  <animate attributeName="fill" values="#bfd1ce;#bfd1ce;#0e0f0f;#bfd1ce;#bfd1ce" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1.3513513513513513s" begin="-0.5067567567567568s"></animate>
+                </circle><circle cx="32.32233047033631" cy="32.32233047033631" fill="#bfd1ce" r="5">
+                  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1.3513513513513513s" repeatCount="indefinite" begin="-0.33783783783783783s"></animate>
+                  <animate attributeName="fill" values="#bfd1ce;#bfd1ce;#0e0f0f;#bfd1ce;#bfd1ce" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1.3513513513513513s" begin="-0.33783783783783783s"></animate>
+                </circle><circle cx="49.99999999999999" cy="25" fill="#bfd1ce" r="5">
+                  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1.3513513513513513s" repeatCount="indefinite" begin="-0.16891891891891891s"></animate>
+                  <animate attributeName="fill" values="#bfd1ce;#bfd1ce;#0e0f0f;#bfd1ce;#bfd1ce" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1.3513513513513513s" begin="-0.16891891891891891s"></animate>
+                </circle><circle cx="67.67766952966369" cy="32.32233047033631" fill="#bfd1ce" r="5">
+                  <animate attributeName="r" values="3;3;5;3;3" times="0;0.1;0.2;0.3;1" dur="1.3513513513513513s" repeatCount="indefinite" begin="0s"></animate>
+                  <animate attributeName="fill" values="#bfd1ce;#bfd1ce;#0e0f0f;#bfd1ce;#bfd1ce" repeatCount="indefinite" times="0;0.1;0.2;0.3;1" dur="1.3513513513513513s" begin="0s"></animate>
+                </circle>
+                </svg>
+            <p>Entrando...</p>
+    
+        </div>
+    </div>
+    <div class="conversa escondido">
+        <header>
+            <div class="info">
+                <img src="image/logo 1.png" alt="logo uol" />
+                <ion-icon onclick="sidebar(this)" name="people"></ion-icon>
+                
+            </div>
+        </header>
+        <main id="logado"></main>
+        <footer  id="logado"></footer>
+    </div>
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
