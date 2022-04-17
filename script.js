@@ -1,5 +1,13 @@
+let ultimaMensagem;
+let nomeUsuario;
+bemVindo();
 
-function tratarSucesso(resposta){
+function bemVindo(){
+carregarHistorico();
+setInterval(carregarHistorico, 3000);
+}
+
+function imprimirHistorico(resposta){
     const historico = resposta.data;
     const mensagens = document.querySelector("main");
     let destino = ``;
@@ -25,8 +33,48 @@ function tratarSucesso(resposta){
           </div>
         `
     }
+    ultimaMensagemScroll();
 }
 
+function carregarHistorico(){
 const promise = axios.get("https://mock-api.driven.com.br/api/v6/uol/messages");
-promise.then(tratarSucesso);
-promise.catch(tratarFalha);
+promise.then(imprimirHistorico);
+}
+
+function ultimaMensagemScroll(){
+    const mensagens = document.querySelector("main")
+    const novaMensagem = mensagens.lastElementChild;
+    if(ultimaMensagem != novaMensagem){
+        ultimaMensagem = novaMensagem;
+        novaMensagem.scrollIntoView();
+    }
+}
+
+function login(){
+    nomeUsuario = document.getElementById("usuario").value;
+
+    const promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants", { name: nomeUsuario });
+    
+    promise.then(nomeValido);
+    promise.catch(nomeInvalido);
+}
+
+function nomeValido(){
+    const input = document.querySelector(".nome")
+    const gif = document.querySelector(".loading")
+    input.classList.remove("nome")
+    input.classList.add("escondido")
+    gif.classList.remove("escondido")
+    setTimeout(entrarNoChat, 3000)
+}
+
+function nomeInvalido(){
+    alert("Infelizmente esse nome já está em uso. Selecione outro.")
+}
+
+function entrarNoChat() {
+    const interfaceLogin = document.querySelector(".inicio")
+    const interfaceChat = document.querySelector(".conversa");
+    interfaceLogin.classList.add("escondido")
+    interfaceChat.classList.remove("escondido")
+}
