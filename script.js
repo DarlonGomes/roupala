@@ -5,6 +5,8 @@ bemVindo();
 function bemVindo(){
 carregarHistorico();
 setInterval(carregarHistorico, 3000);
+setInterval (manterConexao, 4500);
+setInterval (checarUsuarios, 10000);
 }
 
 function imprimirHistorico(resposta){
@@ -21,6 +23,9 @@ function imprimirHistorico(resposta){
             destino = ``;
 
         } else if (historico[i].type == "private_message"){
+            if( historico[i].to != nomeUsuario || historico[i].from != nomeUsuario){
+                continue
+            }
            tipo = "comentario reservado";
            destino = ` para <b>${historico[i].to}</b>:`;
         } else {
@@ -77,4 +82,54 @@ function entrarNoChat() {
     const interfaceChat = document.querySelector(".conversa");
     interfaceLogin.classList.add("escondido")
     interfaceChat.classList.remove("escondido")
+
+    
 }
+
+function manterConexao(){
+    axios.post("https://mock-api.driven.com.br/api/v6/uol/status", { name: nomeUsuario })
+}
+
+function mostrarSide(){
+    const sidebar = document.querySelector(".popup")
+    sidebar.classList.remove("escondido");
+}
+
+function escondeSide(){
+    const chat = document.querySelector(".popup")
+    chat.classList.add("escondido")
+}
+
+function enviarMensagem(){
+    const mensagem = document.getElementById("enviar");
+    
+    const promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", {
+        from: nomeUsuario,
+        to: "Todos",
+        text: mensagem.value,
+        type: "message"
+    })
+    mensagem.value = "";
+}
+
+function checarUsuarios(){
+    const promise = axios.get("https://mock-api.driven.com.br/api/v6/uol/participants");
+    promise.then(imprimirUsuarios)
+}
+
+function imprimirUsuarios(resposta){
+    const info = resposta.data;
+    const listaParticipantes = document.querySelector(".lista");
+    listaParticipantes.innerHTML = `<div class="contato" onclick="destinatario()">
+    <ion-icon name="people"></ion-icon>
+    <div class="user"><h3>Todos</h3><ion-icon class="escondido" name="checkmark-sharp"></ion-icon></div>
+  </div>`
+    for(i = 0; i < info.length ; i++){
+
+        listaParticipantes.innerHTML += `<div class="contato" onclick="destinatario()">
+                <ion-icon name="people"></ion-icon>
+                <div class="user"><h3>${info[i].name}</h3><ion-icon class="escondido" name="checkmark-sharp"></ion-icon></div>
+              </div>`
+    }
+}
+

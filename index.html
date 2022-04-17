@@ -50,17 +50,13 @@
     
         </div>
     </div>
-    <div class="popup escondido">
+    <div class="popup escondido" onclick="escondeSide()">
       <div class="sidebar">
         <div class="info-contato">
           <p>Escolha um contato <br>para enviar mensagem:</p>
         </div>
             <div class="lista">
-              <div class="contato">
-                <ion-icon name="people"></ion-icon>
-                <div class="user"><h3>Todos</h3><ion-icon class="escondido" name="checkmark-sharp"></ion-icon></div>
-              </div>
-              
+
             </div>
         <div class="info-visibilidade">
           <p>Escolha a visibilidade:</p>
@@ -79,30 +75,19 @@
         <header>
             <div class="info">
                 <img src="image/logo 1.png" alt="logo uol" />
-                <ion-icon onclick="sidebar(this)" name="people"></ion-icon>
-                
+                <div class="participantes" onclick="mostrarSide()">
+                <ion-icon name="people"></ion-icon>
+              </div>
             </div>
         </header>
-        <main>
-          <div class="comentario status">
-            <p><span class="hora">(08:30:28)</span> <b>Roberto</b> entrou na sala...</p>
-          </div>
-          <div class="comentario status">
-            <p><span class="hora">(08:30:37)</span> <b>Maria</b> entrou na sala...</p>
-          </div>
-          <div class="comentario publico">
-           <p><span class="hora">(08:30:43)</span> <b>Maria</b> para <b>Todos</b>: Bom dia!</p>
-          </div>
-          <div class="comentario publico">
-           <p><span class="hora">(08:30:52)</span> <b>Roberto</b> para <b>Todos</b>: Bom dia! Como você está?</p>
-          </div>
-        </main>
+        <main></main>
         <footer>
           <div class="digitar-mensagem">
-          <input placeholder="Escreva aqui...">
+          <input placeholder="Escreva aqui..." id="enviar">
           <p>Enviando para Todos</p>
         </div>
-          <ion-icon name="paper-plane-outline"></ion-icon>
+          <div class="enviar" onclick="enviarMensagem()"><ion-icon name="paper-plane-outline" ></ion-icon></div>
+          
         </footer>
     </div>
 
