@@ -9,14 +9,14 @@
     <link href="style.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="capa" id="inicio">
+    <div class="inicio escondido id="inicio" >
         <img src="image/logo 2.png" alt="logo uol" />
         <div class="nome" id="interface">
-        <input placeholder="Digite seu nome aqui" id="login">
-        <button onclick="login()">Entrar</button>
+        <input placeholder="Digite seu nome aqui" id="usuario">
+        <button onclick="login(this)">Entrar</button>
         </div>
         <div class="loading escondido">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#fff;display:block;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
@@ -50,7 +50,32 @@
     
         </div>
     </div>
-    <div class="conversa escondido">
+    <div class="popup escondido">
+      <div class="sidebar">
+        <div class="info-contato">
+          <p>Escolha um contato <br>para enviar mensagem:</p>
+        </div>
+            <div class="lista">
+              <div class="contato">
+                <ion-icon name="people"></ion-icon>
+                <div class="user"><h3>Todos</h3><ion-icon class="escondido" name="checkmark-sharp"></ion-icon></div>
+              </div>
+              
+            </div>
+        <div class="info-visibilidade">
+          <p>Escolha a visibilidade:</p>
+        </div>
+        <div class="contato-publico">
+          <ion-icon name="lock-open"></ion-icon>
+          <div class="tipo-publico"><h3>Público</h3><ion-icon class="escondido" name="checkmark-sharp"></ion-icon></div>
+        </div>
+        <div class="contato-reservado">
+          <ion-icon name="lock-closed"></ion-icon>
+          <div class="tipo-reservado"><h3>Reservadamente</h3><ion-icon class="escondido" name="checkmark-sharp"></ion-icon></div>
+        </div>
+      </div>
+    </div>
+    <div class="conversa ">
         <header>
             <div class="info">
                 <img src="image/logo 1.png" alt="logo uol" />
@@ -58,10 +83,30 @@
                 
             </div>
         </header>
-        <main id="logado"></main>
-        <footer  id="logado"></footer>
+        <main>
+          <div class="comentario status">
+            <p><span class="hora">(08:30:28)</span> <b>Roberto</b> entrou na sala...</p>
+          </div>
+          <div class="comentario status">
+            <p><span class="hora">(08:30:37)</span> <b>Maria</b> entrou na sala...</p>
+          </div>
+          <div class="comentario publico">
+           <p><span class="hora">(08:30:43)</span> <b>Maria</b> para <b>Todos</b>: Bom dia!</p>
+          </div>
+          <div class="comentario publico">
+           <p><span class="hora">(08:30:52)</span> <b>Roberto</b> para <b>Todos</b>: Bom dia! Como você está?</p>
+          </div>
+        </main>
+        <footer>
+          <div class="digitar-mensagem">
+          <input placeholder="Escreva aqui...">
+          <p>Enviando para Todos</p>
+        </div>
+          <ion-icon name="paper-plane-outline"></ion-icon>
+        </footer>
     </div>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>

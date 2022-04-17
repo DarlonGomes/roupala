@@ -1,19 +1,32 @@
-function login(){
-    const usuario = document.getElementById("login").value;
-    const nome = document.querySelector(".capa input");
-    const botao = document.querySelector(".capa button")
-    const load = document.querySelector(".loading")
-    nome.classList.add("escondido");
-    botao.classList.add("escondido");
-    load.classList.remove("escondido");
-    setTimeout(carregarChat, 3000);
 
+function tratarSucesso(resposta){
+    const historico = resposta.data;
+    const mensagens = document.querySelector("main");
+    let destino = ``;
+    let tipo = ``;
+    mensagens.innerHTML = ``
+
+    for(i = 0; i < historico.length; i++){
+
+        if(historico[i].type == "status"){
+            tipo = "comentario status";
+            destino = ``;
+
+        } else if (historico[i].type == "private_message"){
+           tipo = "comentario reservado";
+           destino = ` para <b>${historico[i].to}</b>:`;
+        } else {
+            tipo = "comentario publico";
+            destino = ` para <b>${historico[i].to}</b>:`;
+        }
+        mensagens.innerHTML += `<div class="${tipo}">
+        <p><span class="hora">(${historico[i].time})</span>
+         <b>${historico[i].from}</b>${destino} ${historico[i].text}
+          </div>
+        `
+    }
 }
 
-function carregarChat(){
-const login = document.querySelector(".capa")
-const paginaChat = document.querySelector(".conversa")
-login.classList.add("escondido");
-paginaChat.classList.toggle("escondido");
-
-}
+const promise = axios.get("https://mock-api.driven.com.br/api/v6/uol/messages");
+promise.then(tratarSucesso);
+promise.catch(tratarFalha);
