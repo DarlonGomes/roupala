@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="inicio  id="inicio" >
+    <div class="inicio"  id="inicio">
         <img src="image/logo 2.png" alt="logo uol" />
         <div class="nome">
         <input placeholder="Digite seu nome aqui" id="usuario">
@@ -50,7 +50,8 @@
     
         </div>
     </div>
-    <div class="popup escondido" onclick="escondeSide()">
+    <div class="popup escondido">
+      <div class="opaco" onclick="escondeSide()"></div>
       <div class="sidebar">
         <div class="info-contato">
           <p>Escolha um contato <br>para enviar mensagem:</p>
@@ -61,13 +62,13 @@
         <div class="info-visibilidade">
           <p>Escolha a visibilidade:</p>
         </div>
-        <div class="contato-publico">
+        <div class="estilo" onclick="privacidade(this)">
           <ion-icon name="lock-open"></ion-icon>
-          <div class="tipo-publico"><h3>Público</h3><ion-icon class="escondido" name="checkmark-sharp"></ion-icon></div>
+          <div class="tipo"><h3>Público</h3><ion-icon  name="checkmark-sharp"></ion-icon></div>
         </div>
-        <div class="contato-reservado">
+        <div class="estilo" onclick="privacidade(this)">
           <ion-icon name="lock-closed"></ion-icon>
-          <div class="tipo-reservado"><h3>Reservadamente</h3><ion-icon class="escondido" name="checkmark-sharp"></ion-icon></div>
+          <div class="tipo"><h3>Reservadamente</h3><ion-icon  name="checkmark-sharp"></ion-icon></div>
         </div>
       </div>
     </div>
