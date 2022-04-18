@@ -265,17 +265,18 @@ footer .digitar-mensagem p{
     width: 194px;
     text-align: start;
     overflow-x: hidden;
+    overflow-y: hidden;
     margin-left: 6px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.sidebar .contato .user ion-icon{
+.sidebar .contato .user ion-icon:last-child{
     font-size: 12px;
     color: #28BB25;
     margin-right: 16px;
-    display: none;
+    visibility: hidden;
 }
 
 
@@ -306,17 +307,18 @@ footer .digitar-mensagem p{
     width: 194px;
     text-align: start;
     overflow-x: hidden;
+    overflow-y: hidden;
     margin-left: 6px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.sidebar .estilo .tipo ion-icon{
+.sidebar .estilo ion-icon:last-child{
     font-size: 12px;
     color: #28BB25;
     margin-right: 16px;
-    display: none;
+    visibility: hidden;
 }
 
 
@@ -326,9 +328,6 @@ footer .digitar-mensagem p{
 }
 
 .selecionado{
-    display: flex;
+    visibility: initial;   
 }
 
-.selecionado ion-icon{
-    display: flex;
-}

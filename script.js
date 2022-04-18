@@ -1,7 +1,7 @@
 let ultimaMensagem;
 let nomeUsuario;
 let destinoSelecionado = "Todos";
-let tipoDeMensagem = "";
+let tipoDeMensagem = "message";
 let descricaoDaMensagem = document.querySelector(".digitar-mensagem p");
 bemVindo();
 
@@ -97,29 +97,36 @@ function escondeSide(){
 function enviarMensagem(){
     const mensagem = document.getElementById("enviar");
     if(destinoSelecionado == "Todos"){
-        const promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", {
+            axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", {
             from: nomeUsuario,
-            to: "Todos",
+            to: destinoSelecionado,
             text: mensagem.value,
             type: tipoDeMensagem
         })
     mensagem.value = "";
-    }else if(destinoSelecionado != "Todos" && tipoDeMensagem == ""){
-        const promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", {
+    }else if(destinoSelecionado != "Todos" && tipoDeMensagem == "message"){
+            axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", {
             from: nomeUsuario,
             to: destinoSelecionado,
             text: mensagem.value,
-            type: "message"
+            type: tipoDeMensagem
         })
     mensagem.value = "";
     }else{
-        const promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", {
+            axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", {
             from: nomeUsuario,
             to: destinoSelecionado,
             text: mensagem.value,
             type: tipoDeMensagem
         })
     mensagem.value = "";
+    } 
+    
+}
+
+function enviarComEnter(giggs){
+    if(giggs.key === "Enter"){
+        enviarMensagem()
     }
 }
 function checarUsuarios(){
